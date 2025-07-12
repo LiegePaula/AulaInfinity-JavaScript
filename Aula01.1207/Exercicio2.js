@@ -44,10 +44,12 @@ console.log(n1*n2)
 // 6 - Dividir o valor de duas variáveis numéricas
 
 console.log(n1/n2)
-let n3=50
+let n3=10
 let n4=3
 console.log(n3/n4)
 
 // 7 - Obter o resto da divisão realizada no exercício anterior.
 
 console.log(n3%n4)
+console.log(n1%n2)
+console.log(n3|n4)
