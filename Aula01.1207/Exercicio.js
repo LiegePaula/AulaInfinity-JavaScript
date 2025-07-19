@@ -6,7 +6,7 @@ let brasileira = true
 let nomeCompleto = nome+sobrenome
 
 nome = 'Rafael'
-idade = 44
+// idade = 44
 
 console.log(nome)
 console.log(sobrenome)
