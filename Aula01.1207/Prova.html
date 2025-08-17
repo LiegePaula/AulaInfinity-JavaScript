@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 01</title>
+</head>
+<body>
+    <script>
+        let n1 = Number(prompt('qual o primeiro numero:?'));
+        let n2 = Number(prompt('qual o segundo numero?:'));
+        let soma = n1 + n2
+        let subtracao = n1 - n2
+        let multiplicacao = n1 * n2
+        let divisao = n1 / n2
+        let resto = n1 % n2
+        
+   
+        console.log("Número 1:", n1);
+        console.log("Número 2:", n2);
+        console.log('soma:'+soma);
+        console.log('subtração:'+subtracao)
+        console.log('multiplicação:'+multiplicacao)
+        console.log('divisão:'+divisao)
+        console.log('resto:'+resto)
+        
+
+        let resultado = 0;
+
+        resultado += soma;           
+        console.log("Após += soma:", resultado);
+
+        resultado -= subtracao;     
+        console.log("Após -= subtração:", resultado);
+
+        resultado *= multiplicacao;  
+        console.log("Após *= multiplicação:", resultado);
+
+        resultado /= divisao;        
+        console.log("Após /= divisão:", resultado);
+
+        resultado %= resto;         
+        console.log("Após %= resto:", resultado);
+
+    </script>
+</body>
+</html>

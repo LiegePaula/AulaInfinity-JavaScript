@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--     Atividade 04
+Crie um código JavaScript que solicite ao usuário dois números e uma operação matemática, utilize switch para realizar a operação e exibir o resultado.
+Solicite os números com prompt e armazene em numero1 e numero2.
+Solicite a operação e armazene em operacao.
+Utilize switch para realizar a operação escolhida e exiba o resultado com console.log.
+Objetivo:
+Aprender a utilizar a estrutura switch para criar uma calculadora simples que realiza operações básicas (adição, subtração, multiplicação, divisão) com base na escolha do usuário -->
+ <script>
+        let numero1 = Number(prompt('qual o primeiro numero:?'));
+        let numero2 = Number(prompt('qual o segundo numero?:'));
+        let operacao = prompt("Digite a operação (+, -, *, /):");
+        console.log("Número 1:", numero1);
+        console.log("Número 2:", numero2);
+        console.log('a operação é;', operacao)
+        switch (operacao) {
+    case "+":
+        console.log("Resultado:", numero1 + numero2);
+        break;
+    case "-":
+        console.log("Resultado:", numero1 - numero2);
+        break;
+    case "*":
+        console.log("Resultado:", numero1 * numero2);
+        break;
+    case "/":
+        if (numero2 !== 0) {
+            console.log("Resultado:", numero1 / numero2);
+        } else {
+            console.log("Erro: divisão por zero não é permitida.");
+        }
+        break;
+        default:
+        console.log("Operação inválida. Use +, -, * ou /.");
+        }
+        console.log()
+
+ </script>
+</body>
+</html>

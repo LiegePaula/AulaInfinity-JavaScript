@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--     Atividade 01
+Solicite dois números ao usuário e verifique se ambos são
+positivos, se pelo menos um é positivo, e se nenhum é positivo,
+exibindo os resultados no console.
+
+Use prompt para solicitar os números, armazene-os em numero1
+e numero2, e utilize operadores lógicos para as verificações.
+
+Objetivo:
+Aprender a utilizar operadores lógicos (&&, ||, !) para avaliar
+expressões e controlar o fluxo do código. -->
+
+<script>
+    let n1 = Number(prompt('digite o primeiro numero:'))
+    let n2 = Number(prompt('digite o segundo numero:'))
+    if (n1 > 0 && n2 > 0){
+        console.log('ambos os numeros são positivos')
+    }
+    else if( n1> 0 || n2> 0){
+        console.log('somente um dos numeros é positivos')
+    }
+    else{
+        console.log('ambos os numeros são negativos')
+    }
+
+</script>
+    
+</body>
+</html>
