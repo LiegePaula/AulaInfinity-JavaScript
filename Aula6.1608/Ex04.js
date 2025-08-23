@@ -16,10 +16,10 @@ const produtos = [
 ];
 
 function filtrarPorLetras(produtos, letra) {
-    let filtro = produtos.filter(i => i.toLowerCase().includes(`${letra}`))
+    let filtro = produtos.filter(i => i.toLowerCase().includes(letra))
     return filtro
 }
 
 
 
-console.log(filtrarPorLetras(produtos, 'a'));
+console.log(filtrarPorLetras(produtos, 'c'));

@@ -62,13 +62,15 @@ const produtos = [
 // 4 - Crie um programa que filtra a lista produtos pela letra "a"
 
 function filtrarPorLetras(produtos, letra) {
-    let filtro = produtos.filter(i => i.toLowerCase().includes(`${letra}`))
+    let filtro = produtos.filter(i => i.toLowerCase().includes(letra))
     return filtro
 }
 
 
 
-console.log(filtrarPorLetras(produtos, 'a'));
+console.log(filtrarPorLetras(produtos, 'C'));
+
+
 
 // 5 - Crie um programa que filtra a lista produtos pela letra "e"
 
