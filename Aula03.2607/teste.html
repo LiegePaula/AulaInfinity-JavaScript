@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>JSIA-A03 - Iterações</title>
+</head>
+<body>
+  <script>
+    const nomes = [];
+
+    // Coleta de dados com while (true)
+    while (true) {
+      let nome = prompt("Digite um nome (ou 'sair' para encerrar):");
+      if (nome === null || nome.toLowerCase() === "sair") break;
+      nomes.push(nome);
+    }
+
+    // Processamento com for (exibição com índices)
+    console.log("=== Nomes com índice ===");
+    for (let i = 0; i < nomes.length; i++) {
+      console.log(`${i + 1}: ${nomes[i]}`);
+    }
+
+    // Exibição com for...of (mensagem personalizada)
+    console.log("=== Mensagens de Boas-vindas ===");
+    for (const nome of nomes) {
+      console.log(`Bem-vindo(a), ${nome}!`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--     Atividade 04
+Escreva um programa que faça o seguinte: Peça ao usuário para inserir um número inteiro positivo.
+Utilize um loop while para calcular e exibir a soma de todos os números inteiros de 1 até o número inserido pelo usuário.
+Exiba o resultado em um alerta ou no console.
+
+Objetivo:
+Praticar o uso da estrutura while para iterar um número específico de vezes, manipulando entradas do usuário e
+realizando operações aritméticas simples. -->
+
+<script>
+    let n = (Number(prompt('Digite um numero interior positivo:')))
+    let soma = 0;
+    let i = 1;
+
+    while (i <= n){
+        soma += i;
+        i++;
+    }
+
+    alert('A soma de 1 até '+ n + ' é ' + soma);
+    
+</script>
+
+</body>
+</html>
