@@ -1,0 +1,80 @@
+<!-- Ex02. Faça um programa que peça o peso e a altura de uma pessoa em um HTML, calcule o seu IMC e mostre-o em um alert. -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+ </head>
+ <body>
+    <h1>Cálculo IMC</h1>
+    <DIV>
+        <label for="peso">Digite seu Peso</label> <br/>
+        <input type="number" name="peso" id="peso">
+    </DIV>
+    <div>
+        <label for="altura">Digite sua Altura</label> <br/>
+        <input type="number" name="altura" id="altura">
+    </div>
+
+    <button onclick = "CalcularIMC()">Calcular IMC</button>
+
+    <script>
+        function CalcularIMC() {
+            const peso = Number(document.getElementById('peso').value)
+            const altura = Number(document.getElementById('altura').value)
+        
+            const IMC = peso / (altura*altura)
+            
+            alert(`Seu IMC é ${IMC}`)
+        }
+    </script>
+ </body>
+ </html>
+
+
+ ex02.html
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculo de IMC</title>
+  </head>
+  <body>
+    <h1>Calcule seu IMC</h1>
+
+    <div>
+      <label for="peso"> Peso </label> <br />
+      <input type="number" id="peso" />
+    </div>
+
+    <div>
+      <label for="altura"> Altura </label> <br />
+      <input type="number" id="altura" />
+    </div>
+
+    <button onclick="handleCalcularImc()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+      function calcularImc(peso, altura) {
+        return peso / (altura * altura)
+      }
+      
+      function handleCalcularImc() {
+        const peso = Number(document.getElementById("peso").value);
+        const altura = Number(document.getElementById("altura").value);
+
+        const imc = calcularImc(peso, altura);
+
+        const pResultado = document.getElementById("resultado");
+        pResultado.innerText = `IMC: ${imc.toFixed(2)}`
+      }
+    </script>
+  </body>
+</html>
