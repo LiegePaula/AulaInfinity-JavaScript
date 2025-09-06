@@ -1,0 +1,35 @@
+
+<!-- Ex01. Faça um programa que peça dois numeros em uma página HTML e mostre a soma deles em um alert. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soma</title>
+  </head>
+  <body>
+    <h1>Soma de 2 numeros</h1>
+
+    <div>
+      <label for="n1"> Digite um numero</label> <br />
+      <input type="number" id="n1" />
+    </div>
+    <div>
+      <label for="n2"> Digite outro numero</label> <br />
+      <input type="number" id="n2" />
+    </div>
+
+    <button onclick="somar()">Calcular</button>
+
+    <script>
+            function somar() {
+          const n1 = Number(document.getElementById('n1').value)
+          const n2 = Number(document.getElementById('n2').value)
+
+          const soma = n1 + n2
+          alert(`A soma dos numeros é ${soma}`)
+            }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!-- Ex03. Faça um programa que peça dois numeros em uma página HTML, calcule o produto entre eles (multiplicação) e mostre o resultado dentro de uma <div>. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    <h1>A multiplicação dos números</h1>
+
+    <div>
+        <label for="n1">Digite o primeiro numero</label> <br>
+        <input type="number" name="n1" id="n1">
+    </div>
+
+    <div>
+        <label for="n2">Digite o segundo numero</label> <br>
+        <input type="number" name="n2" id="n2">
+    </div>
+
+        <button onclick="handleMultiplicar()">Multiplicar</button>
+
+        <div>
+            <p id="resultado"></p>
+        </div>
+    <script>
+        const multiplicar = (x, y) => x * y
+
+        function handleMultiplicar() {
+            
+            const n1 = Number(document.getElementById('n1').value)
+            const n2 = Number(document.getElementById('n2').value)
+
+            const produto = multiplicar(n1, n2)
+
+            const divResultado = document.getElementById('resultado')
+            divResultado.innerText = `O produto entre eles é ${produto}`
+                }
+    </script>
+</body>
+</html>
+
+ex03.html
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplicação</title>
+  </head>
+  <body>
+    <h1>Calcule o produto entre 2 numeros</h1>
+
+    <div>
+      <label for="numero1"> Numero 1 </label> <br />
+      <input type="number" id="numero1" />
+    </div>
+
+    <div>
+      <label for="numero2"> Numero 2 </label> <br />
+      <input type="number" id="numero2" />
+    </div>
+
+    <button onclick="handleCalcular()">Calcular</button>
+
+    <div id="resultado"></div>
+
+    <script>
+      const multiplicar = (x, y) => x * y;
+
+      function handleCalcular() {
+        const numero1 = Number(document.getElementById("numero1").value);
+        const numero2 = Number(document.getElementById("numero2").value);
+
+        const produto = multiplicar(numero1, numero2)
+
+        const divResultado = document.getElementById('resultado')
+        divResultado.innerText = `O produto entre eles é ${produto}`
+      }
+    </script>
+  </body>
+</html>
