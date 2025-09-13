@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova</title>
+</head>
+<body>
+    <script>
+        let listaCompras = [];
+
+while (true) {
+    let opcao = prompt(
+        "=== Lista de Compras ===\n" +
+        "1 - Adicionar item\n" +
+        "2 - Remover item\n" +
+        "3 - Exibir lista\n" +
+        "4 - Atualizar item\n" +
+        "5 - Sair\n\n" +
+        "Escolha uma opção:"
+    );
+
+    if (opcao === "1") {
+     
+        let novoItem = prompt("Digite o item que deseja adicionar:");
+        listaCompras.push(novoItem);
+        alert(`"${novoItem}" foi adicionado à lista.`);
+
+    } else if (opcao === "2") {
+   
+        let indice = parseInt(prompt("Digite o índice do item que deseja remover:"));
+        if (indice >= 0 && indice < listaCompras.length) {
+            let removido = listaCompras.splice(indice, 1);
+            alert(`"${removido}" foi removido da lista.`);
+        } else {
+            alert("Índice inválido!");
+        }
+
+    } else if (opcao === "3") {
+       
+        let lista = "=== Sua Lista de Compras ===\n";
+        if (listaCompras.length === 0) {
+            lista += "(lista vazia)";
+        } else {
+            for (let [i, item] of listaCompras.entries()) {
+                lista += `${i} - ${item}\n`;
+            }
+        }
+        alert(lista);
+
+    } else if (opcao === "4") {
+      
+        let indice = parseInt(prompt("Digite o índice do item que deseja atualizar:"));
+        if (indice >= 0 && indice < listaCompras.length) {
+            let novoValor = prompt(`Digite o novo valor para "${listaCompras[indice]}":`);
+            listaCompras[indice] = novoValor;
+            alert(`Item atualizado para "${novoValor}".`);
+        } else {
+            alert("Índice inválido!");
+        }
+
+    } else if (opcao === "5") {
+   
+        alert("Saindo do programa. Até logo!");
+        break;
+
+    } else {
+        alert("Opção inválida, tente novamente!");
+    }
+}
+
+    </script>
+</body>
+</html>
