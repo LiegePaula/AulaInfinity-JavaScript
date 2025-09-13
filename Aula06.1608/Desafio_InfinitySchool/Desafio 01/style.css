@@ -1,0 +1,84 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container central */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    color: #1a237e;
+    margin-bottom: 20px;
+}
+
+/* Labels e selects */
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Botão */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3949ab;
+}
+
+/* Área de respostas e resultado */
+#repostas, #resultado {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8eaf6;
+    border-radius: 5px;
+    border: 1px solid #c5cae9;
+    text-align: left;
+}
+
+#resultado img {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#resultado{
+    text-align: center;
+    font-weight: 600;
+}
