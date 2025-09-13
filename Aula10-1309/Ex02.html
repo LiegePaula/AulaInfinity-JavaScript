@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    Ex02. Faça um programa que altere a cor 
+    da caixa para cada botão que o usuário clicar.
+
+    Se o usuário clicar na caixa, limpe as cores.
+    -->
+    
+    <div id="box" onclick = 'mudarCor()'></div>
+
+    <div>
+        <button onclick="mudarCor('red')"> Vermelho </button>
+        <button onclick="mudarCor('green')"> Verde </button>
+        <button onclick="mudarCor('blue')"> Azul </button>
+
+    </div>
+
+    <script>
+        function mudarCor(cor) {
+
+            // 1. Pegue a div da caixa
+            const Caixa = document.getElementById('box')
+            // 2. Altere a cor (style.backgroundColor)
+            Caixa.style.backgroundColor = cor ? cor : 'transparent'
+            
+
+        }
+    </script>
+</body>
+</html>

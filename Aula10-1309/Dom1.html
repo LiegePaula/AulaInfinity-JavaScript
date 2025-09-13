@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom 1</title>
+  </head>
+  <body>
+    <h1>Dados Pessoa</h1>
+
+    <div id="form">
+      <label for="nome"> Nome </label> <br />
+      <input type="text" name="nome" id="nome" /> <br />
+
+      <label for="telefone"> Telefone </label> <br />
+      <input type="tel" name="telefone" id="telefone" /> <br />
+
+      <button id="enviar">Enviar</button>
+    </div>
+
+    <p id="resultado"></p>
+
+    <script>
+      // Document Object Model (DOM)
+      // O DOM é uma representação do documento e das tags html no Javascript
+      // Ele possibilita que a gente manipule o HTML totalmente através do Javascript.
+
+      // O "document" é a raiz do DOM, ele tem todas as tags
+      console.log(document)
+
+      // "getElementById" busca um elemento pelo ID
+      const pResultado = document.getElementById('resultado')
+      console.log(pResultado)
+
+      // "querySelector" busca o primeiro elemento que bater com um Seletor CSS
+      const divForm = document.querySelector('#form')
+      console.log(divForm)
+
+      const h1Titulo = document.querySelector('h1')
+      console.log(h1Titulo)
+
+      // "querySelectorAll" busca todos os elementos que baterem com o Seletor CSS
+      const labels = document.querySelectorAll('label')
+      console.log(labels)
+    </script>
+  </body>
+</html>
