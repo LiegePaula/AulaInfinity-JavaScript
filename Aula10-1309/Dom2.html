@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom 2</title>
+  </head>
+  <body>
+    <h1>Dados Pessoa</h1>
+
+    <div id="form">
+      <label for="nome"> Nome </label> <br />
+      <input type="text" name="nome" id="nome" /> <br />
+
+      <label for="telefone"> Telefone </label> <br />
+      <input type="tel" name="telefone" id="telefone" /> <br />
+
+      <button onclick="enviarDadosPessoa()">Enviar</button>
+    </div>
+
+    <div id="mensagem" style="display: none; gap: 8px; align-items: center;">
+        <p></p>
+        <img src="" width="24" height="24" alt="">
+    </div>
+    
+    <p id="resultado"></p>
+
+    <script>
+        const successImgUrl = 'https://img.icons8.com/ios11/512/40C057/ok.png'
+        const errorImgUrl = 'https://cdn-icons-png.flaticon.com/512/458/458594.png'
+
+        function enviarDadosPessoa() {
+            // Pegar o valor de um input:
+            // 1. Buscar o elemento HTML do input (com o DOM)
+            const inputNome = document.getElementById('nome')
+
+            // 2. Do elemento input pega o valor (com o ".value")
+            const nome = inputNome.value
+            
+            // Validando Formulário
+            const divMensagem = document.querySelector('#mensagem')
+            divMensagem.style.display = 'flex'
+
+            // Da minha div procura a tag <p>
+            const pMensagem = divMensagem.querySelector('p')
+            const imgMensagem = divMensagem.querySelector('img')
+
+            // Se estiver vazio, coloque um texto dentro do elemento HTML
+            if (!nome.trim()) {
+                // Colocando Somente texto
+                pMensagem.textContent = 'O campo nome é obrigatório.'
+                // pMensagem.innerText = 'O campo nome é obrigatório.'
+                
+                // Colocando Texto e HTML
+                // pMensagem.innerHTML = '<b> O campo nome é obrigatório. </b>'
+                
+                // Modificando Estilo.
+                pMensagem.style.color = 'red'
+                imgMensagem.src = errorImgUrl
+
+                return
+            }
+
+            console.log('Seguindo com o envio dos dados...')
+
+            pMensagem.textContent = 'Dados enviados com sucesso'
+            pMensagem.style.color = 'green'
+            imgMensagem.src = successImgUrl
+        }
+    </script>
+  </body>
+</html>
