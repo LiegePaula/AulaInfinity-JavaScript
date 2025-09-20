@@ -1,0 +1,131 @@
+/* [JSIA-A06] Crie um programa que utiliza funções anônimas, arrow functions e funções de callback para gerenciar e processar uma lista de tarefas.
+Requisitos do Projeto:
+* Criação de Funções Anônimas:
+ - Use uma função anônima para adicionar tarefas a uma lista. A função deve ser atribuída a uma variável e permitir adicionar uma nova tarefa ao array de tarefas.
+
+* Uso de Arrow Functions:
+ - Implemente uma arrow function para listar todas as tarefas, exibindo cada tarefa com seu índice no console.
+
+* Funções de Callback:
+ - Crie uma função que receba outra função como callback. Essa função deve permitir executar diferentes operações com a lista de tarefas, como:
+ - Remover uma tarefa.
+ - Atualizar uma tarefa.
+ - Concluir uma tarefa.
+
+* Interação com o Usuário:
+ - Utilize métodos como prompt() para receber ações do usuário e exiba os resultados no console usando console.log().  */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let tarefas = [];
+
+
+const adicionarTarefa = function (tarefa) {
+  tarefas.push({ nome: tarefa, concluida: false });
+  console.log(`Tarefa adicionada: "${tarefa}"`);
+};
+
+const listarTarefas = () => {
+  console.log("\n=== Lista de Tarefas ===");
+  if (tarefas.length === 0) {
+    console.log("Nenhuma tarefa no momento.");
+    return;
+  }
+  tarefas.forEach((t, i) => {
+    const status = t.concluida ? "[Concluída]" : "[Pendente]";
+    console.log(`${i}: ${t.nome} ${status}`);
+  });
+};
+
+
+function gerenciarTarefas(callback) {
+ 
+  callback(tarefas);
+}
+
+function menu() {
+  while (true) {
+    const opcao = prompt(
+      "Escolha uma opção:\n" +
+      "1 - Adicionar tarefa\n" +
+      "2 - Listar tarefas\n" +
+      "3 - Remover tarefa\n" +
+      "4 - Atualizar tarefa\n" +
+      "5 - Concluir tarefa\n" +
+      "0 - Sair"
+    );
+
+    if (opcao === null || opcao === "0") {
+      console.log("Saindo...");
+      break;
+    }
+
+    switch (opcao) {
+      case "1":
+        const nova = prompt("Digite a nova tarefa:");
+        if (nova) adicionarTarefa(nova);
+        break;
+
+      case "2":
+        listarTarefas();
+        break;
+
+      case "3":
+        gerenciarTarefas(function (lista) {
+          const idx = parseInt(prompt("Índice da tarefa a remover:"));
+          if (!isNaN(idx) && lista[idx]) {
+            console.log(`Removendo: "${lista[idx].nome}"`);
+            lista.splice(idx, 1);
+          } else {
+            console.log("Índice inválido.");
+          }
+        });
+        break;
+
+      case "4":
+        gerenciarTarefas(function (lista) {
+          const idx = parseInt(prompt("Índice da tarefa a atualizar:"));
+          if (!isNaN(idx) && lista[idx]) {
+            const novoNome = prompt("Novo nome da tarefa:");
+            if (novoNome) {
+              lista[idx].nome = novoNome;
+              console.log("Tarefa atualizada.");
+            }
+          } else {
+            console.log("Índice inválido.");
+          }
+        });
+        break;
+
+      case "5":
+        gerenciarTarefas(function (lista) {
+          const idx = parseInt(prompt("Índice da tarefa a concluir:"));
+          if (!isNaN(idx) && lista[idx]) {
+            lista[idx].concluida = true;
+            console.log(`Tarefa concluída: "${lista[idx].nome}"`);
+          } else {
+            console.log("Índice inválido.");
+          }
+        });
+        break;
+
+      default:
+        console.log("Opção inválida.");
+    }
+  }
+}
+
+
+menu();
+
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+</head>
+<body>
+  <script>
+
+    const adicionarTarefa = function(tarefa) {
+      tarefas.push({ nome: tarefa, concluida: false });
+      alert(`Tarefa adicionada: "${tarefa}"`);
+    };
+
+   
+    const tarefas = [];
+
+
+    const listarTarefas = () => {
+      if (tarefas.length === 0) {
+        alert("Nenhuma tarefa cadastrada.");
+        return;
+      }
+
+      let texto = "=== Lista de Tarefas ===\n";
+      tarefas.forEach((t, i) => {
+        const status = t.concluida ? "[Concluída]" : "[Pendente]";
+        texto += `${i}: ${t.nome} ${status}\n`;
+      });
+
+      alert(texto);
+    };
+
+   
+    function gerenciarTarefas(callback) {
+      callback(tarefas);
+    }
+
+   
+    function menu() {
+      while (true) {
+        const opcao = prompt(
+          "=== Menu de Tarefas ===\n" +
+          "1 - Adicionar tarefa\n" +
+          "2 - Listar tarefas\n" +
+          "3 - Remover tarefa\n" +
+          "4 - Atualizar tarefa\n" +
+          "5 - Concluir tarefa\n" +
+          "0 - Sair"
+        );
+
+        if (opcao === null || opcao === "0") {
+          alert("Programa encerrado.");
+          break;
+        }
+
+        switch (opcao) {
+          case "1":
+            const nova = prompt("Digite a nova tarefa:");
+            if (nova) adicionarTarefa(nova);
+            break;
+
+          case "2":
+            listarTarefas();
+            break;
+
+          case "3":
+            gerenciarTarefas(function(lista) {
+              const idx = parseInt(prompt("Índice da tarefa a remover:"));
+              if (!isNaN(idx) && lista[idx]) {
+                alert(`Removendo: "${lista[idx].nome}"`);
+                lista.splice(idx, 1);
+              } else {
+                alert("Índice inválido.");
+              }
+            });
+            break;
+
+          case "4":
+            gerenciarTarefas(function(lista) {
+              const idx = parseInt(prompt("Índice da tarefa a atualizar:"));
+              if (!isNaN(idx) && lista[idx]) {
+                const novoNome = prompt("Novo nome da tarefa:");
+                if (novoNome) {
+                  lista[idx].nome = novoNome;
+                  alert("Tarefa atualizada.");
+                }
+              } else {
+                alert("Índice inválido.");
+              }
+            });
+            break;
+
+          case "5":
+            gerenciarTarefas(function(lista) {
+              const idx = parseInt(prompt("Índice da tarefa a concluir:"));
+              if (!isNaN(idx) && lista[idx]) {
+                lista[idx].concluida = true;
+                alert(`Tarefa concluída: "${lista[idx].nome}"`);
+              } else {
+                alert("Índice inválido.");
+              }
+            });
+            break;
+
+          default:
+            alert("Opção inválida.");
+        }
+      }
+    }
+
+   
+    menu();
+  </script>
+</body>
+</html>
