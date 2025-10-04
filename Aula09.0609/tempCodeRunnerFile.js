@@ -1,5 +1,5 @@
-const soma = (a, b) => a + b;
-const subtracao = (a , b) => a - b;
-const multiplicacao = (a , b) => a * b;
 
-console.log(soma(2,5))
+let situacao = verificarSituacao(mediaFinal);
+
+console.log(`Média final: ${mediaFinal.toFixed(2)}`);
+console.log(`Situação: ${situacao}`);
