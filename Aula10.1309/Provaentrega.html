@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organizador de Tarefas</title>
+<style>
+body { font-family: Arial, Helvetica, sans-serif; padding: 20px; background: #f8f9fa; }
+h1 { text-align: center; color: #333; }
+#container { max-width: 500px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 
+    0 2px 6px rgba(0,0,0,0.1); }
+input[type="text"] { width: 70%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+button { padding: 10px 15px; border: none; border-radius: 6px; background-color: #27ab39; color: #fff; cursor: pointer; }
+button:hover { background-color: #37c079; }
+ul { list-style-type: none; padding: 0; margin-top: 20px; }
+li { display: flex; justify-content: space-between; align-items: center; background: #f1f1f1; margin-bottom: 10px; padding: 10px; border-radius: 6px; }
+li.concluida { text-decoration: line-through; color: gray; background: #d4edda; }
+.remover { background-color: #dc3545; border: none; color: white; padding: 6px 10px; border-radius: 4px; cursor: pointer; }
+.remover:hover { background-color: #c82333; }
+</style>
+</head>
+<body>
+
+
+<h1>Organizador de Tarefas</h1>
+
+
+<div id="container">
+<input type="text" id="tarefaInput" placeholder="Digite uma nova tarefa...">
+<button id="adicionarTarefa">Adicionar Tarefa</button>
+
+
+<ul id="listaTarefas"></ul>
+</div>
+
+
+<script>
+const input = document.getElementById('tarefaInput');
+const botaoAdicionar = document.getElementById('adicionarTarefa');
+const lista = document.getElementById('listaTarefas');
+
+
+
+botaoAdicionar.addEventListener('click', function() {
+const texto = input.value.trim();
+if (texto === '') return;
+
+
+const li = document.createElement('li');
+li.textContent = texto;
+
+
+
+li.addEventListener('click', function() {
+li.classList.toggle('concluida');
+});
+
+
+const botaoRemover = document.createElement('button');
+botaoRemover.textContent = 'Remover';
+botaoRemover.className = 'remover';
+botaoRemover.addEventListener('click', function(event) {
+event.stopPropagation(); 
+lista.removeChild(li);
+});
+
+
+li.appendChild(botaoRemover);
+lista.appendChild(li);
+
+
+input.value = '';
+
+});
+</script>
+
+
+</body>
+</html>

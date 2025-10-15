@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <title>Sistema de Notas do Aluno</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        background-color: white;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      p {
+        font-size: 16px;
+        color: #333;
+      }
+
+      .aprovado {
+        color: green;
+        font-weight: bold;
+      }
+
+      .reprovado {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Informações do Aluno</h1>
+      <div id="resultado"></div>
+    </div>
+    <script>
+      const aluno = {
+        nome: "Liege",
+        idade: 43,
+        notas: [8.5, 9, 7.5],
+
+        calcularMedia: function () {
+          let soma = 0;
+          for (let nota of this.notas) {
+            soma += nota;
+          }
+          return soma / this.notas.length;
+        },
+      };
+
+      aluno.notas = [...aluno.notas, 9];
+
+      function verificarSituacao(media) {
+        if (media >= 7) {
+          return "Aprovado";
+        } else {
+          return "Reprovadpo";
+        }
+      }
+
+      let { nome, idade } = aluno;
+
+      let mediaFinal = aluno.calcularMedia();
+      let situacao = verificarSituacao(mediaFinal);
+
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = `
+      <p><strong>Nome:</strong> ${nome}</p>
+      <p><strong>Idade:</strong> ${idade}</p>
+      <p><strong>Notas:</strong> ${aluno.notas.join(", ")}</p>
+      <p><strong>Média final:</strong> ${mediaFinal.toFixed(2)}</p>
+      <p><strong>Situação:</strong> 
+        <span class="${situacao === "Aprovado" ? "aprovado" : "reprovado"}">
+          ${situacao}
+        </span>
+      </p>
+    `;
+    </script>
+  </body>
+</html>

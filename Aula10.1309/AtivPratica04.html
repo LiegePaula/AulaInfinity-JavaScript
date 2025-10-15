@@ -1,0 +1,65 @@
+<!-- Atividade 04
+Crie uma página HTML com uma imagem e um link. Utilize JavaScript para alterar os atributos
+desses elementos de forma dinâmica quando um botão for clicado.
+
+Crie uma estrutura HTML com:
+Uma imagem com o id="minhaImagem".
+
+Um link com o id="meuLink".
+
+Um botão com o id="meuBotao".
+
+Quando o botão for clicado:
+Use setAttribute() para alterar o src da imagem para uma nova URL.
+
+Use setAttribute() para alterar o href do link para um novo endereço.
+
+Objetivo:
+Praticar o uso de setAttribute() para alterar atributos de elementos HTML, como src de
+imagens e href de links, dinamicamente. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body { font-family: Arial, Helvetica, sans-serif; padding: 20px; text-align: center; }
+img { max-width: 200px; display: block; margin: 20px auto; border-radius: 10px; }
+a { display: inline-block; margin-top: 10px; font-weight: bold; text-decoration: none; color: #0055aa; }
+button { margin-top: 20px; padding: 10px 20px; border: none; background-color: #007bff; color: white; border-radius: 6px; cursor: pointer; }
+button:hover { background-color: #0056b3; }
+</style>
+</head>
+<body>
+    <h1>Atividade 04 - Alterar atributos dinamicamente</h1>
+
+
+<img id="minhaImagem" src="https://via.placeholder.com/200" alt="Imagem inicial">
+
+
+<a id="meuLink" href="https://www.google.com" target="_blank">Visite o Google</a>
+
+
+<br>
+
+
+<button id="meuBotao">Alterar imagem e link</button>
+
+
+<script>
+// Seleciona os elementos
+const imagem = document.getElementById('minhaImagem');
+const link = document.getElementById('meuLink');
+const botao = document.getElementById('meuBotao');
+
+
+// Adiciona evento de clique ao botão
+botao.addEventListener('click', function() {
+imagem.setAttribute('src', 'https://picsum.photos/200/200'); // Nova imagem
+link.setAttribute('href', 'https://www.wikipedia.org'); // Novo link
+link.textContent = 'Visite a Wikipedia'; // Atualiza o texto do link
+});
+</script>
+</body>
+</html>

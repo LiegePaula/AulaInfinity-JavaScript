@@ -1,0 +1,106 @@
+<!-- Crie uma aplicação simples de Organizador de Tarefas utilizando JavaScript para praticar a utilização de Eventos DOM e 
+ seus conceitos. O projeto deve permitir ao usuário adicionar, remover e marcar tarefas como concluídas 
+ através de métodos, seletores e manipulação de elementos. 
+
+Requisitos do Projeto:
+
+a) Estrutura HTML Inicial:
+- Crie uma área onde o usuário possa inserir uma tarefa.
+- Adicione um botão "Adicionar Tarefa" que, ao ser clicado, insira a tarefa na lista de tarefas.
+- Exiba a lista de tarefas em uma lista (ordenada ou não ordenada).
+
+b) Adicionando Tarefas:
+- Ao clicar no botão "Adicionar Tarefa", o texto da tarefa inserido pelo usuário deve ser adicionado como um novo 
+item na lista de tarefas.
+
+c) Marcar Tarefas como Concluídas:
+- Permita que o usuário marque uma tarefa como concluída ao clicar sobre ela.
+- Utilize a propriedade classList para adicionar uma classe CSS à tarefa (por exemplo, .concluída). Isso pode alterar o estilo 
+da tarefa (exemplo: riscar o texto).
+
+d) Remover Tarefas:
+- Adicione um botão "Remover" ao lado de cada tarefa, ou uma caixa de seleção que permita remover múltiplas tarefas.
+- Ao clicar no botão "Remover", a tarefa deve ser removida da lista.
+- Utilize o método removeChild() para remover o item da lista.
+
+e) Eventos DOM:
+- Use o método addEventListener() para detectar os eventos de clique para adicionar, remover e marcar as tarefas como concluídas. -->
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organizador de Tarefas</title>
+<style>
+body { font-family: Arial, Helvetica, sans-serif; padding: 20px; background: #f8f9fa; }
+h1 { text-align: center; color: #333; }
+#container { max-width: 500px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+input[type="text"] { width: 70%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+button { padding: 10px 15px; border: none; border-radius: 6px; background-color: #007bff; color: #fff; cursor: pointer; }
+button:hover { background-color: #0056b3; }
+ul { list-style-type: none; padding: 0; margin-top: 20px; }
+li { display: flex; justify-content: space-between; align-items: center; background: #f1f1f1; margin-bottom: 10px; padding: 10px; border-radius: 6px; }
+li.concluida { text-decoration: line-through; color: gray; background: #d4edda; }
+.remover { background-color: #dc3545; border: none; color: white; padding: 6px 10px; border-radius: 4px; cursor: pointer; }
+.remover:hover { background-color: #c82333; }
+</style>
+</head>
+<body>
+
+
+<h1>Organizador de Tarefas</h1>
+
+
+<div id="container">
+<input type="text" id="tarefaInput" placeholder="Digite uma nova tarefa...">
+<button id="adicionarTarefa">Adicionar Tarefa</button>
+
+
+<ul id="listaTarefas"></ul>
+</div>
+
+
+<script>
+const input = document.getElementById('tarefaInput');
+const botaoAdicionar = document.getElementById('adicionarTarefa');
+const lista = document.getElementById('listaTarefas');
+
+
+
+botaoAdicionar.addEventListener('click', function() {
+const texto = input.value.trim();
+if (texto === '') return;
+
+
+const li = document.createElement('li');
+li.textContent = texto;
+
+
+
+li.addEventListener('click', function() {
+li.classList.toggle('concluida');
+});
+
+
+const botaoRemover = document.createElement('button');
+botaoRemover.textContent = 'Remover';
+botaoRemover.className = 'remover';
+botaoRemover.addEventListener('click', function(event) {
+event.stopPropagation(); 
+lista.removeChild(li);
+});
+
+
+li.appendChild(botaoRemover);
+lista.appendChild(li);
+
+
+input.value = '';
+input.focus();
+});
+</script>
+
+
+</body>
+</html>
