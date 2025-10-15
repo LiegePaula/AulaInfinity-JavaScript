@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Cadastro de Usuários</h1>
+
+    <form id="formUsuario">
+      <label> Nome de Usuário:</label>
+      <input type="text" id="nome" placeholder="Digite seu nome" /><br />
+
+      <label> Senha:</label>
+      <input type="password" id="senha" placeholder="Digite sua senha" /><br />
+
+      <label> Telefone:</label>
+      <input type="tel" id="telefone" placeholder="(00) 00000-0000" /><br />
+
+      <label> Data de Nascimento:</label>
+      <input type="date" id="dataNascimento" /><br />
+
+      <label> E-mail:</label>
+      <input type="email" id="email" placeholder="exemplo@email.com" /><br />
+
+      <button type="submit">Enviar</button><br />
+    </form>
+
+    <button id="btnLimpar">Limpar Lista</button>
+
+    <div id="listaUsuarios">
+      <h3>Usuários Cadastrados:</h3>
+      <ul id="usuarios"></ul>
+    </div>
+
+    <script>
+      const form = document.getElementById("formUsuario");
+      const lista = document.getElementById("usuarios");
+      const btnLimpar = document.getElementById("btnLimpar");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nome = document.getElementById("nome").value.trim();
+        const senha = document.getElementById("senha").value.trim();
+        const telefone = document.getElementById("telefone").value.trim();
+        const dataNascimento = document.getElementById("dataNascimento").value;
+        const email = document.getElementById("email").value.trim();
+
+        if (!nome || !senha || !telefone || !dataNascimento || !email) {
+          console.error("Todos os campos devem ser preenchidos");
+          alert("Por favor, preencha todos os campos antes de enviar.");
+          return;
+        }
+
+        const li = document.createElement("li");
+        li.textContent = `${nome} | ${telefone} | ${email} | ${dataNascimento};`;
+
+        lista.appendChild(li);
+
+        form.reset();
+      });
+
+      btnLimpar.addEventListener("click", function () {
+        lista.innerHTML = "";
+        console.log("Lista de Usuários foi limps!");
+      });
+    </script>
+  </body>
+</html>
