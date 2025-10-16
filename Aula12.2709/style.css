@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerenciador de Notas</title>
-  <style>
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f6f6f6;
@@ -69,18 +63,3 @@
     .remover:hover {
       background-color: #a71d2a;
     }
-  </style>
-</head>
-<body>
-  <div id="app">
-    <h1>📝 Gerenciador de Notas</h1>
-
-    <input type="text" id="tituloNota" placeholder="Digite o título da nota">
-    <button id="btnAdicionar">Adicionar Nota</button>
-
-    <ul id="listaNotas"></ul>
-  </div>
-
-  <script src="teste1.js"></script>
-</body>
-</html>
