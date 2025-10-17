@@ -69,4 +69,4 @@ function removerNota(index) {
 document.getElementById("btnAdicionar").addEventListener("click", adicionarNota);
 
 
-window.onload = exibirNotas;
+exibirNotas()
