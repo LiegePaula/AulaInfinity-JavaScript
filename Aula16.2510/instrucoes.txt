@@ -1,0 +1,16 @@
+digitar no terminal : npm init -y   para criar o package.json
+
+incluir "type": "module", depois de 'main'
+
+digitar no terminal: npm i express - para criar as dependencias (bibliotecas que irei usar)
+
+digitar no terminal: npm i - para rodae na maquina
+
+rodar no terminal : node server.js  para rodar a aplicação
+
+ctrl + C para parar de rodar a aplicação
+
+
+
+vercel para publicar
+

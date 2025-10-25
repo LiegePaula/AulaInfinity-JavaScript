@@ -1,0 +1,120 @@
+/* --- Estilos Base e Layout --- */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f9; /* Fundo suave */
+    color: #333;
+}
+
+h1 {
+    color: #0056b3; /* Cor primária para o título principal */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* --- Estilos do Formulário --- */
+
+#produtos-form {
+    max-width: 400px; /* Limita a largura do formulário */
+    margin: 0 auto; /* Centraliza o formulário na página */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+    /* Mantendo seus estilos existentes para os campos de entrada */
+    display: flex;
+    max-width: 100%; /* Ajustado para preencher a largura do form */
+    flex-direction: column;
+    margin-bottom: 15px; /* Aumentei um pouco a margem para mais espaçamento */
+}
+
+.input label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.input input[type="text"],
+.input input[type="number"],
+.input select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%; /* Faz com que os campos preencham o contêiner .input */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* --- Estilo do Botão --- */
+
+#produtos-form button[type="submit"] {
+    display: block; /* Ocupa a largura total do contêiner */
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Cor primária do botão */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#produtos-form button[type="submit"]:hover {
+    background-color: #0056b3; /* Escurece no hover */
+}
+
+/* --- Estilos da Tabela --- */
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+#produtos-table {
+    /* Mantendo seus estilos existentes para a borda */
+    width: 80%; /* Aumentei a largura para melhor visualização dos dados */
+    margin: 20px auto; /* Centraliza a tabela */
+    border-collapse: collapse;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+#produtos-table th,
+#produtos-table td {
+    border: 1px solid #ddd; /* Borda mais suave */
+    padding: 12px 15px;
+    text-align: left;
+}
+
+#produtos-table thead tr {
+    background-color: #007bff; /* Cor de destaque para o cabeçalho */
+    color: white;
+}
+
+#produtos-table th {
+    font-weight: bold;
+}
+
+#produtos-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Listras para melhor leitura */
+}
+
+#produtos-table tbody tr:hover {
+    background-color: #f1f1f1; /* Feedback visual ao passar o mouse */
+}
